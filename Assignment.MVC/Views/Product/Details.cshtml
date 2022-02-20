@@ -1,0 +1,29 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model Assignment.MVC.Models.ProductModels.ProductDetailsModel
+@inject SignInManager<ApplicationUser> SignInManager
+
+
+<div class="container">
+
+    <input hidden value="@Model.UserId" />
+    <div class="card text-white bg-dark mt-2 mb-3 border" style="max-width: 25rem;">
+        <div class="card-header">@Model.Product.SubCategoryName</div>
+        <div class="card-body">
+            <h5 class="card-title text-light">@Model.Product.Name</h5>
+            <p class="card-text text-light">@Model.Product.Price$</p>
+            <p class="card-text text-light">@Model.Product.Description</p>
+            <p class="card-text text-light">@Model.Product.CategoryName</p>
+            @if (SignInManager.IsSignedIn(User))
+            {
+                <a asp-controller="Home" asp-action="AddToCart" asp-route-Id="@Model.Product.Id" class="btn btn-dark text-light border">Add to Cart</a>
+            }
+            else
+            {
+                <p class="navigation-colors">You have to be signed in to place an order</p>
+                <a class="nav-link navigation-colors dropdown-hover-item btn btn-dark border" asp-area="" asp-controller="Auth" asp-action="SignUp">Register</a>
+                <a class="nav-link navigation-colors dropdown-hover-item btn btn-dark border" asp-area="" asp-controller="Auth" asp-action="SignIn">Login</a>
+            }
+        </div>
+    </div>
+</div>
+

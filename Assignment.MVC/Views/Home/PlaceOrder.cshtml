@@ -1,0 +1,31 @@
+﻿@model List<Assignment.MVC.Models.CartModels.CartItem>
+
+    @{
+    ViewData["Title"] = "Order Page";
+}
+        
+<div class="card col-6 mt-5" style="width: 30rem;">
+    <div class="card-header navigation-colors">
+        Thank you for your order!
+
+    </div>
+    
+    @foreach (var item in Model)
+    {
+        
+       
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item bg-dark text-light border">Product: @item.Product.Name</li>  
+            <li class="list-group-item bg-dark text-light border">Quantity: @item.Quantity</li> 
+            <li class="list-group-item bg-dark text-light border">Price: @item.Product.Price$</li>                      
+   
+             
+        </ul>
+    
+    }
+         
+
+    <span class="list-group-item bg-dark text-light border">Total: @ViewBag.TotalPrice$ </span>
+
+
+</div>

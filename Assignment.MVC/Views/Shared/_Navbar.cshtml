@@ -1,0 +1,60 @@
+﻿<header>
+    <nav class="navbar navbar-expand-lg navbar-dark border border-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+                <img src="/Images/Crowsymbol_ccexpress.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                <span class="navigation-colors">Rook Commerce</span>
+            </a>
+            
+          
+            <button class="navbar-toggler test" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 drop">
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="dropdown-hover-item ">Computers</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" asp-controller="Product" asp-action="Computers" asp-route-value="Desktop">Desktops</a></li>
+                            <li><a class="dropdown-item" asp-controller="Product" asp-action="Computers" asp-route-value="Laptops">Laptops</a></li>
+                          
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="dropdown-hover-item">Accessories</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                              <li><a class="dropdown-item" asp-controller="Product" asp-action="Accessories" asp-route-value="Monitors">Monitors</a></li>
+                            <li><a class="dropdown-item" asp-controller="Product" asp-action="Accessories" asp-route-value="Headsets">Headsets</a></li>
+                            <li><a class="dropdown-item" asp-controller="Product" asp-action="Accessories" asp-route-value="Keyboards">Keyboards</a></li>
+                         
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="dropdown-hover-item">Computer Components</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                            
+                            <li><a class="dropdown-item" asp-controller="Product" asp-action="ComputerComponents" asp-route-value="GPU">Graphic card</a></li>
+                            <li><a class="dropdown-item" asp-controller="Product" asp-action="ComputerComponents" asp-route-value="Motherboard">Motherboard</a></li>
+                            <li><a class="dropdown-item" asp-controller="Product" asp-action="ComputerComponents" asp-route-value="Harddrive">Harddrive</a></li>                          
+                        </ul>
+                    </li>
+
+                </ul>
+                <form method="get" class="d-flex bg-dark justify-content-center">
+                <input class="form-control me-2 bg-dark text-light" type="text" name="value" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" asp-controller="Product" asp-action="SearchBar" >Search</button>
+            </form>
+                <partial name="_AuthNavBar" />
+                
+            </div>
+        </div>
+    </nav>
+</header>

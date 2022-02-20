@@ -1,0 +1,67 @@
+﻿@model Assignment.MVC.Models.ViewModels.SignUpViewModel
+
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h1 class="navigation-colors">Register</h1>
+
+<div class="row navigation-colors">
+    <div class="col-12">
+
+        <form class="row g-3" asp-action="SignUp">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="col-md-6">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control bg-dark  text-light" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control bg-dark  text-light" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="col-md-12">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control bg-dark  text-light" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" type="password" class="form-control bg-dark  text-light" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="ConfirmPassword" class="control-label"></label>
+                <input asp-for="ConfirmPassword" class="form-control bg-dark  text-light" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+            <div class="col-12">
+                <label asp-for="Street" class="control-label"></label>
+                <input asp-for="Street" class="form-control bg-dark  text-light" />
+                <span asp-validation-for="Street" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="PostalCode" class="control-label"></label>
+                <input asp-for="PostalCode" class="form-control bg-dark  text-light" />
+                <span asp-validation-for="PostalCode" class="text-danger"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="City" class="control-label"></label>
+                <input asp-for="City" class="form-control bg-dark  text-light" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+            <div class="col-12">
+                <input type="submit" value="Register" class="btn btn-dark border navigation-colors" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+}
+}

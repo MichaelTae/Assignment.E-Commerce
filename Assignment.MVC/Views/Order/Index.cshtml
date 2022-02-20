@@ -1,0 +1,29 @@
+﻿@model Assignment.MVC.Models.ViewModels.OrderViewModel
+
+
+<table class=" table table-bordered table-dark ">
+    <thead>
+        <tr>
+
+            <th scope="col">Order ID</th>
+            <th scope="col">Customer Email</th>
+            <th scope="col">Total Price</th>
+        </tr>
+    </thead>
+    @foreach (var x in ViewBag.Orders)
+    {
+
+        <tbody>
+            <tr>
+
+                <td>@x.Id</td>
+                <td>@x.CustomerName</td>
+                <td>@x.TotalPrice</td>
+            </tr>
+
+        </tbody>
+    }
+
+</table>
+
+

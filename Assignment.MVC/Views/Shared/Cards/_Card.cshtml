@@ -1,0 +1,25 @@
+﻿@model Assignment.MVC.Models.ProductModel
+
+
+<div class="row justify-content-center align-items-center">
+
+
+
+    <input hidden value="@Model.Id" />
+    <div class="col">
+        <div class="card bg-dark">
+            <div class="card-body bg-dark border">
+                <h5 class="card-title text-light">@Model.Name</h5>
+                <p class="card-text text-light">@Model.Price$</p>
+                <p class="card-text text-light">@Model.Description</p>
+            </div>
+            <div class="card-footer border">              
+                <a asp-controller="Product" asp-action="Details" asp-route-Id="@Model.Id" class="btn btn-dark border">Details</a>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+

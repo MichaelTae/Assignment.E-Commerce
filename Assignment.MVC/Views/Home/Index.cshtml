@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<partial name="_ShoppingCart"/>
+
+
+@if(ViewBag.ShoppingCart == null){
+
+}
+else{
+    
+    <a class="navigation-colors btn btn-dark text-light border mt-4" input-type="submit" asp-controller="Home" asp-action="PlaceOrder">Place Order</a>
+    
+}
+
+
